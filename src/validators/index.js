@@ -1,7 +1,7 @@
-const Joi = require('@hapi/joi');
+import Joi from '@hapi/joi'
 
 
-const validateRhino = (rhino) => {
+export const validateRhino = (rhino) => {
 
     // The body should contain no additional keys.
     const schema = Joi.object({
@@ -29,7 +29,3 @@ const validateRhino = (rhino) => {
     return null;
 }
 
-
-module.exports = {
-    validateRhino
-}

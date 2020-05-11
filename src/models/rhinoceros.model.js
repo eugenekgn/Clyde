@@ -1,6 +1,6 @@
 const uuidv4 = require('uuid/v4');
 const _ = require('lodash')
-let rhinoceroses = require('./data');
+let rhinoceroses = require('../data');
 
 exports.getAll = ({ name, species }) => {
 
@@ -23,7 +23,7 @@ exports.getAllEndanged = () => {
 
   const endanged = Object.values(groupedRhinoceroses).reduce((groupedRhinoceroses, currentGroup) => {
     if (currentGroup.length <= 2) {
-      groupedRhinoceroses = { ...groupedRhinoceroses, ...currentGroup }
+      groupedRhinoceroses = [...groupedRhinoceroses, ...currentGroup]
     }
     return groupedRhinoceroses;
   }, [])

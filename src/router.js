@@ -1,9 +1,9 @@
 //TODO: add babel
-const Router = require('koa-router');
+import Router from 'koa-router';
 const router = new Router();
-const model = require('./rhinoceros');
-const util = require('util')
-const validators = require('./validators')
+import model from './models/rhinoceros.model';
+import util from 'util'
+import { validateRhino } from './validators'
 
 // 4. Add a route that returns Endangered Rhinos
 router.get('/rhinoceros/endangered', (ctx, next) => {
@@ -24,7 +24,7 @@ router.post('/rhinoceros', async (ctx, next) => {
 
   const rhino = ctx.request.body;
 
-  const errors = validators.validateRhino(rhino)
+  const errors = validateRhino(rhino)
 
   if (errors) {
     ctx.body = `There have been validation errors: ${util.inspect(errors)}`;
