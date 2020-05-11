@@ -28,7 +28,6 @@ exports.getAllEndanged = () => {
     return groupedRhinoceroses;
   }, [])
 
-  console.log('wtf', endanged)
   return endanged
 }
 
