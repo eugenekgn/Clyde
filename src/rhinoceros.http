@@ -1,0 +1,27 @@
+
+### Get All Rhinoceros
+
+GET http://localhost:3000/rhinoceros HTTP/1.1
+Accept: application/json
+
+### Get Rhinoceros by Id
+
+GET http://localhost:3000/rhinoceros/08da0048-c5a0-4722-8ec6-75b9b1b046e3 HTTP/1.1
+Accept: application/json
+
+### Create Rhino
+
+POST http://localhost:3000/rhinoceros HTTP/1.1
+content-type: application/json
+
+{
+    "name": "eugene",
+    "species": "javan_rhinoceros"
+}
+
+### Get Filtered Set
+
+GET http://localhost:3000/rhinoceros/endangered HTTP/1.1
+Accept: application/json
+
+### Get Endangered Set
