@@ -21,9 +21,8 @@ content-type: application/json
 
 ### Get Filtered Set
 
-GET http://localhost:3000/rhinoceros HTTP/1.1
+GET http://localhost:3000/rhinoceros?species=white_rhinoceros&name=Clyde HTTP/1.1
 Accept: application/json
-
 
 
 ### Get Endangered Set

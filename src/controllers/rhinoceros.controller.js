@@ -1,9 +1,9 @@
-//TODO: add babel
+
 import Router from 'koa-router';
 const router = new Router();
-import model from './models/rhinoceros.model';
+import model from '../models/rhinoceros.model';
 import util from 'util'
-import { validateRhino } from './validators'
+import { validateRhino } from '../validators'
 
 // 4. Add a route that returns Endangered Rhinos
 router.get('/rhinoceros/endangered', (ctx, next) => {

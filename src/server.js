@@ -1,10 +1,8 @@
-const Koa = require('koa'),
-  app = new Koa(),
-  bodyParser = require('koa-bodyparser'),
-  router = require('./router');
+import Koa from 'koa';
+import bodyParser from 'koa-bodyparser'
+import router from './controllers/rhinoceros.controller.js';
 
-
-
+const app = new Koa();
 const PORT = process.env.PORT || 3000;
 
 app.proxy = true;
