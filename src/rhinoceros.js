@@ -18,11 +18,18 @@ exports.getById = (id) => {
   return rhinoceroses.find(rh => rh.id === id)
 };
 
-
 exports.getAllEndanged = () => {
-  const results = _.groupBy(rhinoceroses, 'species')
-  console.log(results)
-  return results
+  const groupedRhinoceroses = _.groupBy(rhinoceroses, 'species')
+
+  const endanged = Object.values(groupedRhinoceroses).reduce((groupedRhinoceroses, currentGroup) => {
+    if (currentGroup.length <= 2) {
+      groupedRhinoceroses = { ...groupedRhinoceroses, ...currentGroup }
+    }
+    return groupedRhinoceroses;
+  }, [])
+
+  console.log('wtf', endanged)
+  return endanged
 }
 
 exports.newRhinoceros = data => {

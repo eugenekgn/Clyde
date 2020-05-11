@@ -5,6 +5,12 @@ const model = require('./rhinoceros');
 const util = require('util')
 const validators = require('./validators')
 
+// 4. Add a route that returns Endangered Rhinos
+router.get('/rhinoceros/endangered', (ctx, next) => {
+
+  const rhinoceroses = model.getAllEndanged();
+  ctx.response.body = { rhinoceroses };
+});
 
 // 1. Add a new route to the API
 router.get('/rhinoceros/:id', (ctx, next) => {
@@ -33,26 +39,10 @@ router.post('/rhinoceros', async (ctx, next) => {
 router.get('/rhinoceros', (ctx, next) => {
 
   const filters = { name: ctx.query.name, species: ctx.query.species }
-
   const rhinoceroses = model.getAll(filters);
   ctx.response.body = { rhinoceroses };
 });
 
 
-// // 4. Add a route that returns Endangered Rhinos
-// router.get('/rhinoceros-endangered', (ctx, next) => {
-
-//   console.log('wttttt')
-//   const rhinoceroses = model.getAllEndanged();
-//   ctx.response.body = { rhinoceroses };
-// });
-
-
-// 4. Add a route that returns Endangered Rhinos
-router.get('/rhinoceros/endangered', (ctx, next) => {
-  console.log('ctx.params.type:', ctx.params.type)
-  // const rhinoceroses = model.getAllEndanged();
-  // ctx.response.body = { rhinoceroses };
-});
 
 module.exports = router;
