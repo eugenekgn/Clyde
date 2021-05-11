@@ -9,7 +9,7 @@
     "koa-bodyparser": "~4.2.0",
     "koa-router": "~7.4.0",
     "koa-validate": "^1.0.7",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "util": "^0.12.3",
     "uuid": "~3.3.2"
   },
